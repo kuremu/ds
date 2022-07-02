@@ -565,7 +565,7 @@ class PriorityQueue<T:(Prioritizable)> implements Queue<T>
 			for (i in 1...size + 1)
 			{
 				e = src.get(i);
-				assert(Std.is(e, Cloneable), "element is not of type Cloneable");
+				assert(Std.isOfType(e, Cloneable), "element is not of type Cloneable");
 				
 				c = cast(e, Cloneable<Dynamic>).clone();
 				c.position = e.position;

@@ -732,7 +732,7 @@ class HashTable<K:Hashable, T> implements Map<K, T>
 				{
 					if (srcKeys.get(i) != null)
 					{
-						assert(Std.is(srcVals.get(i), Cloneable), "element is not of type Cloneable");
+						assert(Std.isOfType(srcVals.get(i), Cloneable), "element is not of type Cloneable");
 						
 						dstVals.set(i, cast(srcVals.get(i), Cloneable<Dynamic>).clone());
 					}

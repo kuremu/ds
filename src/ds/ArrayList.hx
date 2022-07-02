@@ -542,7 +542,7 @@ class ArrayList<T> implements List<T>
 		
 		if (cmp != null) return mData.binarySearchCmp(val, from, size - 1, cmp);
 		
-		assert(Std.is(val, Comparable), "element is not of type Comparable");
+		assert(Std.isOfType(val, Comparable), "element is not of type Comparable");
 		
 		var k = size;
 		var l = from, m, h = k, d = mData;
@@ -551,7 +551,7 @@ class ArrayList<T> implements List<T>
 		{
 			m = l + ((h - l) >> 1);
 			
-			assert(Std.is(d.get(m), Comparable), "element is not of type Comparable");
+			assert(Std.isOfType(d.get(m), Comparable), "element is not of type Comparable");
 			
 			e = cast d.get(m);
 			if (e.compare(val) < 0)
@@ -560,7 +560,7 @@ class ArrayList<T> implements List<T>
 				h = m;
 		}
 		
-		assert(Std.is(d.get(l), Comparable), "element is not of type Comparable");
+		assert(Std.isOfType(d.get(l), Comparable), "element is not of type Comparable");
 		
 		e = cast d.get(l);
 		return ((l <= k) && (e.compare(val)) == 0) ? l : -l;
@@ -870,7 +870,7 @@ class ArrayList<T> implements List<T>
 		
 		#if debug
 		for (i in first...first + k)
-			assert(Std.is(d.get(i), Comparable), "element is not of type Comparable");
+			assert(Std.isOfType(d.get(i), Comparable), "element is not of type Comparable");
 		#end
 		
 		var last = first + k - 1, lo = first, hi = last;
@@ -932,7 +932,7 @@ class ArrayList<T> implements List<T>
 		
 		#if debug
 		for (i in first...first + k)
-			assert(Std.is(d.get(i), Comparable), "element is not of type Comparable");
+			assert(Std.isOfType(d.get(i), Comparable), "element is not of type Comparable");
 		#end
 		
 		var j, a, b;
@@ -1256,7 +1256,7 @@ class ArrayList<T> implements List<T>
 		{
 			for (i in 0...size)
 			{
-				assert(Std.is(src.get(i), Cloneable), "element is not of type Cloneable");
+				assert(Std.isOfType(src.get(i), Cloneable), "element is not of type Cloneable");
 				
 				var cloneable:Cloneable<Dynamic> = cast src.get(i);
 				dst.set(i, cloneable.clone());

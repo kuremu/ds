@@ -724,7 +724,7 @@ class IntHashTable<T> implements Map<Int, T>
 				{
 					if (hasKey(i))
 					{
-						assert(Std.is(src.get(i), Cloneable), "element is not of type Cloneable");
+						assert(Std.isOfType(src.get(i), Cloneable), "element is not of type Cloneable");
 						
 						dst.set(i, cast(src.get(i), Cloneable<Dynamic>).clone());
 					}

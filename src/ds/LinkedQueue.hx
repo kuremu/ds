@@ -505,7 +505,7 @@ class LinkedQueue<T> implements Queue<T>
 			var node = mHead;
 			if (node != null)
 			{
-				assert(Std.is(node.val, Cloneable), "element is not of type Cloneable");
+				assert(Std.isOfType(node.val, Cloneable), "element is not of type Cloneable");
 				
 				copy.mHead = copy.mTail = new LinkedQueueNode<T>(cast(node.val, Cloneable<Dynamic>).clone());
 				copy.mHead.next = copy.mTail;
@@ -517,7 +517,7 @@ class LinkedQueue<T> implements Queue<T>
 				var t;
 				while (node != null)
 				{
-					assert(Std.is(node.val, Cloneable), "element is not of type Cloneable");
+					assert(Std.isOfType(node.val, Cloneable), "element is not of type Cloneable");
 					
 					t = new LinkedQueueNode<T>(cast(node.val, Cloneable<Dynamic>).clone());
 					copy.mTail = copy.mTail.next = t;

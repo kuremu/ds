@@ -227,7 +227,7 @@ class ListSet<T> implements Set<T>
 			{
 				for (val in set)
 				{
-					assert(Std.is(val, Cloneable), "element is not of type Cloneable");
+					assert(Std.isOfType(val, Cloneable), "element is not of type Cloneable");
 					
 					this.set(cast(val, Cloneable<Dynamic>).clone());
 				}
@@ -356,7 +356,7 @@ class ListSet<T> implements Set<T>
 		{
 			for (i in 0...size)
 			{
-				assert(Std.is(src.get(i), Cloneable), "element is not of type Cloneable");
+				assert(Std.isOfType(src.get(i), Cloneable), "element is not of type Cloneable");
 				
 				dst.set(i, cast(src.get(i), Cloneable<Dynamic>).clone());
 			}

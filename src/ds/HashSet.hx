@@ -525,7 +525,7 @@ class HashSet<T:Hashable> implements Set<T>
 					
 					if (v != null)
 					{
-						assert(Std.is(v, Cloneable), "element is not of type Cloneable");
+						assert(Std.isOfType(v, Cloneable), "element is not of type Cloneable");
 						
 						dst.set(i, cast(v, Cloneable<Dynamic>).clone());
 					}

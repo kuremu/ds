@@ -1440,7 +1440,7 @@ class Graph<T> implements Collection<T>
 		{
 			while (n != null)
 			{
-				assert(Std.is(n.val, Cloneable), "element is not of type Cloneable");
+				assert(Std.isOfType(n.val, Cloneable), "element is not of type Cloneable");
 				
 				m = copy.add(cast(n.val, Cloneable<Dynamic>).clone());
 				t[i++] = m;

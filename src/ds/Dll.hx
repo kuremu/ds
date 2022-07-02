@@ -1217,7 +1217,7 @@ class Dll<T> implements List<T>
 		{
 			var srcNode = head;
 			
-			assert(Std.is(head.val, Cloneable), "element is not of type Cloneable");
+			assert(Std.isOfType(head.val, Cloneable), "element is not of type Cloneable");
 			
 			var e = cast(head.val, Cloneable<Dynamic>);
 			var dstNode = copy.head = new DllNode<T>(e.clone(), copy);
@@ -1235,7 +1235,7 @@ class Dll<T> implements List<T>
 				dstNode0 = dstNode;
 				var srcNode0 = srcNode;
 				
-				assert(Std.is(srcNode.val, Cloneable), "element is not of type Cloneable");
+				assert(Std.isOfType(srcNode.val, Cloneable), "element is not of type Cloneable");
 				
 				e = cast(srcNode.val, Cloneable<Dynamic>);
 				dstNode = dstNode.next = new DllNode<T>(e.clone(), copy);
@@ -1247,7 +1247,7 @@ class Dll<T> implements List<T>
 			
 			dstNode0 = dstNode;
 			
-			assert(Std.is(srcNode.val, Cloneable), "element is not of type Cloneable");
+			assert(Std.isOfType(srcNode.val, Cloneable), "element is not of type Cloneable");
 			
 			e = cast(srcNode.val, Cloneable<Dynamic>);
 			copy.tail = dstNode.next = new DllNode<T>(e.clone(), copy);
@@ -1328,7 +1328,7 @@ class Dll<T> implements List<T>
 					}
 					else
 					{
-						assert(Std.is(p.val, Comparable), "element is not of type Comparable");
+						assert(Std.isOfType(p.val, Comparable), "element is not of type Comparable");
 						
 						if (cast(p.val, Comparable<Dynamic>).compare(q.val) >= 0)
 						{
@@ -1440,7 +1440,7 @@ class Dll<T> implements List<T>
 			var p = n.prev;
 			var v = n.val;
 			
-			assert(Std.is(p.val, Comparable), "element is not of type Comparable");
+			assert(Std.isOfType(p.val, Comparable), "element is not of type Comparable");
 			
 			if (cast(p.val, Comparable<Dynamic>).compare(v) < 0)
 			{
@@ -1448,7 +1448,7 @@ class Dll<T> implements List<T>
 				
 				while (i.hasPrev())
 				{
-					assert(Std.is(i.prev.val, Comparable), "element is not of type Comparable");
+					assert(Std.isOfType(i.prev.val, Comparable), "element is not of type Comparable");
 					
 					if (cast(i.prev.val, Comparable<Dynamic>).compare(v) < 0)
 						i = i.prev;

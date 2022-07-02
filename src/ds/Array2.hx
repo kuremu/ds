@@ -1209,7 +1209,7 @@ class Array2<T> implements Collection<T>
 				var e:Cloneable<Dynamic>;
 				for (i in 0...size)
 				{
-					assert(Std.is(src.get(i), Cloneable), "element is not of type Cloneable");
+					assert(Std.isOfType(src.get(i), Cloneable), "element is not of type Cloneable");
 					
 					e = cast src.get(i);
 					dst.set(i, e.clone());
